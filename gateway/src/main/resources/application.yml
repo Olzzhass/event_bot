@@ -1,0 +1,7 @@
+server:
+  port: 8081
+
+telegram:
+  bot:
+    name: "event_project"
+    token: "${TELEGRAM_BOT_TOKEN}"
