@@ -10,6 +10,7 @@
 
     <modules>
         <module>gateway</module>
+        <module>event-service</module>
     </modules>
 
     <properties>

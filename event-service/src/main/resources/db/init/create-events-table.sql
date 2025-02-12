@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS events (
+    id BIGINT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    date VARCHAR(50) NOT NULL,
+    location VARCHAR(255) NOT NULL
+)
