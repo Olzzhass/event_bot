@@ -16,11 +16,14 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private final BotProperties botProperties;
     private final CommandDispatcher commandDispatcher;
+    private final CallbackDispatcher callbackDispatcher;
 
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             sendMessage(commandDispatcher.dispatch(update));
+        } else if (update.hasCallbackQuery()) {
+            sendMessage(callbackDispatcher.dispatch(update));
         }
     }
 
