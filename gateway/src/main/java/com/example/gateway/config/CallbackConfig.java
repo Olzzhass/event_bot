@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public class CallbackConfig {
     @Bean
     public Map<String, CallbackCommand> callbackCommandMap(Map<String, CallbackCommand> commands) {
-        System.out.println(commands);
         return commands.entrySet().stream()
                 .collect(Collectors.toMap(entry -> entry.getKey().replace("CallbackCommand", "").toLowerCase(), Map.Entry::getValue));
     }
