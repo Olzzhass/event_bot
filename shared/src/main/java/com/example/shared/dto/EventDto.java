@@ -1,9 +1,9 @@
-package com.example.gateway.model.dto;
+package com.example.shared.dto;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Data
 @AllArgsConstructor

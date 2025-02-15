@@ -1,6 +1,6 @@
 package com.example.gateway.service;
 
-import com.example.gateway.model.dto.EventDto;
+import com.example.shared.dto.EventDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;

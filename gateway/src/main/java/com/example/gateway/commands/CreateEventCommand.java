@@ -1,7 +1,6 @@
 package com.example.gateway.commands;
 
-import com.example.gateway.commands.Command;
-import com.example.gateway.model.dto.EventDto;
+import com.example.shared.dto.EventDto;
 import com.example.gateway.service.KafkaProducerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
