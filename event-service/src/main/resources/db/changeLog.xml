@@ -10,5 +10,8 @@
     <changeSet logicalFilePath="path-independent" author="Olzhas" id="1">
         <sqlFile path="/db/init/create-events-table.sql" relativeToChangelogFile="false" splitStatements="true"/>
     </changeSet>
+    <changeSet logicalFilePath="path-independent" author="Olzhas" id="2">
+        <sqlFile path="/db/init/create-subscriptions-table.sql" relativeToChangelogFile="false" splitStatements="true"/>
+    </changeSet>
 
 </databaseChangeLog>

@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,5 +24,9 @@ public class EventService {
 
     public List<Event> findAll() {
         return eventRepository.findAll();
+    }
+
+    public Optional<Event> findById(Long eventId) {
+        return eventRepository.findById(eventId);
     }
 }

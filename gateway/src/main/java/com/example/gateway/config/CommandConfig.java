@@ -13,6 +13,7 @@ public class CommandConfig {
 
     @Bean
     public Map<String, Command> commandMap(Map<String, Command> commands) {
+        System.out.println(commands);
         return commands.entrySet().stream()
                 .collect(Collectors.toMap(entry -> "/" + entry.getKey().replace("Command", "")
                         .toLowerCase(), Map.Entry::getValue));
