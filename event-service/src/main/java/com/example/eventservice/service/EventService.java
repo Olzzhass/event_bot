@@ -7,6 +7,8 @@ import com.example.eventservice.repository.EventRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EventService {
@@ -17,5 +19,9 @@ public class EventService {
     public Event save(EventDto eventDto) {
         Event event = eventMapper.toEntity(eventDto);
         return eventRepository.save(event);
+    }
+
+    public List<Event> findAll() {
+        return eventRepository.findAll();
     }
 }
