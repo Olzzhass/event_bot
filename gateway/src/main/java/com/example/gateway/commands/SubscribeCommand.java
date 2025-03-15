@@ -13,18 +13,17 @@ public class SubscribeCommand implements Command {
     private final KafkaProducerService kafkaProducerService;
 
     @Override
-    public SendMessage execute(Update update) {
+    public SendMessage execute(Update update, String arguments) {
         Long chatId = update.getMessage().getChatId();
-        String messageText = update.getMessage().getText();
 
-        String[] parts = messageText.split("\\s+");
-        if (parts.length < 2) {
-            return new SendMessage(chatId.toString(), "❌ Использование: /subscribe <event_id>");
+        if(arguments == null || !arguments.matches("\\d++")) {
+            return new SendMessage(chatId.toString(),
+                    "Введите корректный номер события, например: /subscribe 1");
         }
 
-        String eventId = parts[1];
-        kafkaProducerService.sendSubscription(chatId.toString(), eventId);
+        kafkaProducerService.sendSubscription(chatId.toString(), arguments);
 
-        return new SendMessage(chatId.toString(), "✅ Ваша подписка на событие " + eventId + " отправлено в систему");
+        return new SendMessage(chatId.toString(),
+                "✅ Ваша подписка на событие " + arguments + " отправлено в систему");
     }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 public class StartCommand implements Command {
 
     @Override
-    public SendMessage execute(Update update) {
+    public SendMessage execute(Update update, String arguments) {
         String chatId = update.getMessage().getChatId().toString();
 
         String messageText = """

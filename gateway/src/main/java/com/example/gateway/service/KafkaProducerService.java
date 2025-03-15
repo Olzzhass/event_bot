@@ -22,6 +22,6 @@ public class KafkaProducerService {
 
     public void sendSubscription(String chatId, String eventId) {
         String message = chatId + ":" + eventId;
-        stringKafkaTemplate.send("event.subsribe.request", message);
+        stringKafkaTemplate.send("event.subscribe.request", message);
     }
 }

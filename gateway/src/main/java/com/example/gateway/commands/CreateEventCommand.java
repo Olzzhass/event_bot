@@ -19,7 +19,7 @@ public class CreateEventCommand implements Command {
     private final Map<Long, Integer> userStep = new HashMap<>();
 
     @Override
-    public SendMessage execute(Update update) {
+    public SendMessage execute(Update update, String arguments) {
         Long chatId = update.getMessage().getChatId();
         String userMessage = update.getMessage().getText();
 

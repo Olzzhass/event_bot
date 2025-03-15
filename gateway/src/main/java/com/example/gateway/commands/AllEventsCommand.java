@@ -13,7 +13,7 @@ public class AllEventsCommand implements Command {
     private final KafkaProducerService kafkaProducerService;
 
     @Override
-    public SendMessage execute(Update update) {
+    public SendMessage execute(Update update, String arguments) {
         String chatId = update.getMessage().getChatId().toString();
         kafkaProducerService.requestAllEvents(chatId);
         return new SendMessage(chatId, "Запрос отправлен, пожалуйста, подождите...");
